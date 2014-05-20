@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keypad Demo</title>
+    <link rel="stylesheet" type="text/css" href="jquery.keypad.css">
+    <style type="text/css">
+        body {
+            width: 600px;
+            height: 800px;
+        }
+        #keypad {
+            margin: 0 auto;
+            width: 420px;
+            height: 560px;
+        }
+        input {
+            color: black;
+            background: white;
+            text-align: center;
+            margin: 70px auto 40px;
+            font-size: 3em;
+            display: block;
+            width: 400px;
+            border-radius: 6px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="password" class="keypad" disabled="disabled" />
+    </form>
+    <div id="keypad"></div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/visionect/koalalib/master/jquery.trackmanipulation.js"></script>
+    <script type="text/javascript" src="jquery.keypad.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#keypad').keypad();
+            $('input').change(function() {
+                $(this).tmList({bitDepth: 1, A2: true}); // trigger fast redraw for visionect tablet
+            });
+            $('form').submit(function(e) {
+                e.preventDefault();
+                console.log($('input.keypad').val());
+            });
+        });
+    </script>
+</body>
+</html>
