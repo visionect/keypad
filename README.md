@@ -1,6 +1,6 @@
 jQuery keypad plugin
 ====================
-This plugin is made for displaying numeric keypad on touchscreen devices. Try [demo](https://rawgit.com/visionect/keypad/demo.html).
+This plugin is made for displaying numeric keypad on touchscreen devices. Try [demo](http://rawgit.com/visionect/keypad/master/demo.html).
 
 Usage
 -----
